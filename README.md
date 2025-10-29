@@ -1,45 +1,14 @@
-# aipnd
-# Introduction to Machine Learning Nanodegree
-## Deep Learning
-### Create your own Image Classifier
+# Image Classifier – PyTorch
 
-#### Overview
-Project code for Udacity's AI Programming with Python Nanodegree program. In this project, students first develop code for an image classifier built with PyTorch, then convert it into a command line application.
+This project is part of Udacity's **AI Programming with Python Nanodegree**.  
+The goal is to build an **image classification model** using **PyTorch**, train it on a flower dataset, and use the trained network to predict the class of new images.
 
-#### Install
-This project requires Python 2.7 and the following Python libraries installed:
-- PyTorch
-- ArgParse
-- Jason
-- PIL
-- NumPy
-- Pandas
-- matplotlib
-- scikit-learn You will also need to have software installed to run and execute an iPython Notebook
-We recommend students install Anaconda, a pre-packaged Python distribution that contains all of the necessary libraries and software for this project.
+The project includes two main components:
 
-#### Run
-In a terminal or command window, navigate to the top-level project directory / (that contains this README) and run one of the following commands:
+- **Model Training:**  
+  A neural network is trained using transfer learning. The model learns to classify flower images into 102 different categories. During training, the script reports loss, accuracy, and saves checkpoints.
 
-ipython notebook Image Classifier Project.ipynb or
+- **Prediction Application:**  
+  A command-line tool loads a saved checkpoint and predicts the most likely flower name for a given input image, along with the class probability.
 
-jupyter notebook Image Classifier Project.ipynb This will open the iPython Notebook software and project file in your browser.
-
-**Or for Command Line**
-In a terminal or command window, navigate to the top-level project directory / (that contains this README) and run one of the following commands:
-- Train a new network on a data set with train.py
-
-  - Basic usage: python train.py data_directory
-  - Prints out training loss, validation loss, and validation accuracy as the network trains
-  - Options:
-    - Set directory to save checkpoints: python train.py data_dir --save_dir save_directory
-    - Choose architecture: python train.py data_dir --arch "vgg13"
-    - Set hyperparameters: python train.py data_dir --learning_rate 0.01 --hidden_units 512 --epochs 20
-    - Use GPU for training: python train.py data_dir --gpu
-- Predict flower name from an image with predict.py along with the probability of that name. That is, you'll pass in a single image /path/to/image and return the flower name and class probability.
-
-  - Basic usage: python predict.py /path/to/image checkpoint
-  - Options:
-    - Return top KK most likely classes: python predict.py input checkpoint --top_k 3
-    - Use a mapping of categories to real names: python predict.py input checkpoint --category_names cat_to_name.json
-    - Use GPU for inference: python predict.py input checkpoint --gpu
+The final deliverable is a fully functional image classifier that can train on a dataset, save the model, and perform inference on new images using a terminal command.
